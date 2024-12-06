@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Teachers List</title>
+</head>
+<body style="background-color:SlateBlue">
+<h1><strong>Teachers List</strong></h1>
+<a href="{% url 'teachers:create' %}"><button type="submit">Create Teacher</button></a>
+<a href="{% url 'home' %}"><button type="submit">Back Home</button></a>
+{% for teacher in teachers %}
+    <div>
+        <ul>
+            <li><a href="{% url 'teachers:detail' pk=teacher.pk %}" style="color:Blue;">{{ teacher.first_name }} {{ teacher.last_name }}</a></li>
+        </ul>
+    </div>
+{% empty %}
+    <h1>No Teachers Yet!</h1>
+{% endfor %}
+</body>
+</html>

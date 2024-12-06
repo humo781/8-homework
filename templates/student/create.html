@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<h1>Add a Student</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="first_name">First name:</label><br>
+    <input type="text" id="first_name" name="first_name"><br>
+    <label for="last_name">Last name:</label><br>
+    <input type="text" id="last_name" name="last_name"><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age"><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <button type="submit" style="margin: 10px">Save</button>
+</form>
+</body>
+</html>

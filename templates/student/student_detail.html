@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Detail</title>
+</head>
+<body>
+<h1>Student Detail</h1>
+<a href="{% url 'students:list' %}"><button type="submit">Back to List</button></a>
+<a href="{% url 'home' %}"><button type="submit">Back Home</button></a>
+<h3>First Name: {{ student.first_name }}</h3>
+<h3>Last Name: {{ student.last_name }}</h3>
+<h3>Age: {{ student.age }}</h3>
+<h3>Email: {{ student.email }}</h3>
+<form method="post" action="{% url 'students:delete' student.pk %}">
+{% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+</body>
+</html>

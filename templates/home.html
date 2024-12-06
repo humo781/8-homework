@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<style>
+    a {
+        padding: 0px;
+        background-color: #f8f9fa;
+
+    }
+</style>
+<body style="background-color:PowderBlue">
+<h1 class="text-center mt-4 " style="text-align: left;"><strong>List of Topics</strong></h1>
+<div>
+    <ul>
+        <li><a href="{% url 'students:list' %}"><strong>Students</strong></a></li>
+        <li><a href="{% url 'teachers:list' %}"><strong>Teachers</strong></a></li>
+        <li><a href="{% url 'groups:list' %}"><strong>Groups</strong></a></li>
+    </ul>
+</div>
+</body>
+</html>

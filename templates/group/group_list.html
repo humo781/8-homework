@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Groups List</title>
+</head>
+<body style="background-color:SlateBlue">
+<h1><strong>Groups List</strong></h1>
+<a href="{% url 'groups:create' %}"><button type="submit">Create Group</button></a>
+<a href="{% url 'home' %}"><button type="submit">Back Home</button></a>
+{% for group in groups %}
+    <div>
+        <ul>
+            <li><a href="{% url 'groups:detail' pk=group.pk %}" style="color:Blue;">{{ group.group_name }}</a></li>
+        </ul>
+    </div>
+{% empty %}
+    <h1>No Groups Yet!</h1>
+{% endfor %}
+
+</body>
+</html>

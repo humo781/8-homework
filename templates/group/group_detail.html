@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group Detail</title>
+</head>
+<body>
+<h1>Group Detail</h1>
+<a href="{% url 'groups:list' %}"><button type="submit">Back to List</button></a>
+<a href="{% url 'home' %}"><button type="submit">Back Home</button></a>
+<h3>Group Name: {{ group.group_name }}</h3>
+<h3>Group Type: {{ group.group_type }}</h3>
+<form method="post" action="{% url 'groups:delete' group.pk %}">
+{% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+</body>
+</html>

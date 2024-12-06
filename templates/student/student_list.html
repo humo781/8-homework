@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Students List</title>
+</head>
+<body style="background-color:SlateBlue">
+<h1><strong>Students List</strong></h1>
+<a href="{% url 'students:create' %}"><button type="submit">Create Student</button></a>
+<a href="{% url 'home' %}"><button type="submit">Back Home</button></a>
+{% for student in students %}
+    <div>
+        <ul>
+            <li><a href="{% url 'students:detail' pk=student.pk %}" style="color:Blue;">{{ student.first_name }} {{ student.last_name }}</a></li>
+        </ul>
+    </div>
+{% empty %}
+    <h1>No Students Yet!</h1>
+{% endfor %}
+</body>
+</html>

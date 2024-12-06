@@ -1,0 +1,46 @@
+Boshlang'ich sozlamalar
+1. gitinore sozlash
+2. venv yaratish va aktivatsiya qilish
+3. django o'rnatish
+4. config nomli proyekt yaratish exam-1 loyihani ichida
+5. git add .gitignore, git commit -m "", git push origin main qilish (venv dan oldin yuborib qo'yish)
+6. python manage.py migrate (db.sqlite ni qo'shib qo'yish)
+7. python manage.py createsuperuser (agar admin panelga kirishga to'g'ri kelib qolsa xar ehtimol)
+
+Loyihaning config sozlamalari
+1. students, teachers va groups app larini yaratish
+2. config/settings.py da students, teachers va groups applarini installed_apps ga qo'shish
+3. config/settings.py da templates manzilini BASE_DIR orqali berish
+4. config/settings.py timezone ni 'Asia/Tashkent' ga to'g'irlash
+5. config/urls.py da applarning url larini ko'rsatish
+6. config/urls.py da home funksiyasini asosiy url ('') ga sozlash
+
+Asosiy kod yozish qismi
+1.templates directory yaratish
+2. templates ni ichida har bir app uchun yana alohida directory yaratish va ularni ichida har bir app uchun list
+va detail shablonlarini yaratish alohida home.html ham yaratish
+3. students/models.py da Student modelini yaratish maydonlari(first_name, last_name, age, email)
+4. students/admin.py da Student modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+5. students/views.py da student_list nomli funksiya yaratish(vazifasi: userga Student modelidagi datani va student_list.html ni ko'rsatadi)
+student_detail nomli funksiya yaratish(vazifasi: studentning ma'lumotini ko'rsatadi)
+student_create nomli funksiya yaratish(vazifasi:yangi student yaratadi)
+student_delete nomli funksiya yaratish(vazifasi: mavjud studentni o'chiradi)
+6. students app da urls.py yaratish va students/views.py dagi funsksiyalarga yo'nalish berish
+7. teachers/models.py da Teacher modelini yaratish maydonlari(first_name, last_name, subject)
+8. teachers/admin.py da Teacher modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+9. teachers/views.py da teacher_list nomli funksiya yaratish(vazifasi: userga Teacher modelidagi datani va teacher_list.html ni ko'rsatadi)
+teacher_detail nomli funksiya yaratish(vazifasi: teacherning ma'lumotini ko'rsatadi)
+teacher_create nomli funksiya yaratish(vazifasi:yangi teacher yaratadi)
+teacher_delete nomli funksiya yaratish(vazifasi: mavjud teacherni o'chiradi)
+10. teachers app da urls.py yaratish va teachers/views.py dagi funsksiyaga yo'nalish berish
+11. groups/models.py da Group modelini yaratish maydonlari(group_name, group_type)
+12. groups/admin.py da Group modelini register qilish list_display orqali maydonlarini ham ko'rsatish
+13. groups/views.py da group_list nomli funksiya yaratish(vazifasi: userga Group modelidagi datani va group_list.html ni ko'rsatadi)
+group_detail nomli funksiya yaratish(vazifasi: groupning ma'lumotini ko'rsatadi)
+group_create nomli funksiya yaratish(vazifasi:yangi group yaratadi)
+group_delete nomli funksiya yaratish(vazifasi: mavjud groupni o'chiradi)
+14. groups app da urls.py yaratish va groups/views.py dagi funsksiyaga yo'nalish berish
+15. python manage.py makemigrations va python manage.py migrate buyruqlari orqali modellarni ma'lumotlar bazasiga qoshish
+16. Templates dagi home, teachers, students va groups papkalariga list, create, detail, delete larga shablon yaratish va html tag yozib user ko'radigan sahifani chiroyliroq chiqarish
+
+// git rm -r --cached .idea (.idea ketib qolsa o'chirish uslubi, --cached mahalliy diskdagi fayllarni o'chirmaydi, faqat Git kuzatuvidan olib tashlaydi)
